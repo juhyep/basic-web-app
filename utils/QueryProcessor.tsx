@@ -39,7 +39,7 @@ export default function QueryProcessor(query: string): string {
     }
   }
   else if (query.toLowerCase().includes("multiplied")) {
-    const addMatch = query.match(/What is (\d+) minus (\d+)/);
+    const addMatch = query.match(/What is (\d+) multiplied by (\d+)/);
     if (addMatch) {
       const x: number = parseInt(addMatch[1]);
       const y: number = parseInt(addMatch[2]);
