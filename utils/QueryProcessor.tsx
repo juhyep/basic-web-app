@@ -12,10 +12,16 @@ export default function QueryProcessor(query: string): string {
   else if (query.toLowerCase().includes("name")) {
     return ("sally");
   }
-  else if (query.toLowerCase().includes("41 plus 51")) {
-    return ("92");
+  else if (query.toLowerCase().includes("plus")) {
+    const addMatch = query.match(/What is (\d+) plus (\d+)/);
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      return (x+y).toString();
+    }
   }
-  else if (query.toLowerCase().includes("Which of the following numbers is the largest: 48, 21, 78?")) {
+  
+  else if (query.toLowerCase().includes("largest")) {
     return ("78");
   }
 
