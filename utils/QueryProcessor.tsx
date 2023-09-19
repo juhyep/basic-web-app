@@ -31,18 +31,18 @@ export default function QueryProcessor(query: string): string {
     }
   }
   else if (query.toLowerCase().includes("minus")) {
-    const addMatch = query.match(/What is (\d+) minus (\d+)/);
-    if (addMatch) {
-      const x: number = parseInt(addMatch[1]);
-      const y: number = parseInt(addMatch[2]);
+    const subtractMatch = query.match(/What is (\d+) minus (\d+)/);
+    if (subtractMatch) {
+      const x: number = parseInt(subtractMatch[1]);
+      const y: number = parseInt(subtractMatch[2]);
       return (x-y).toString();
     }
   }
   else if (query.toLowerCase().includes("multiplied")) {
-    const addMatch = query.match(/What is (\d+) multiplied by (\d+)/);
-    if (addMatch) {
-      const x: number = parseInt(addMatch[1]);
-      const y: number = parseInt(addMatch[2]);
+    const timesMatch = query.match(/What is (\d+) multiplied by (\d+)/);
+    if (timesMatch) {
+      const x: number = parseInt(timesMatch[1]);
+      const y: number = parseInt(timesMatch[2]);
       return (x*y).toString();
     }
   }
