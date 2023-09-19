@@ -10,8 +10,12 @@ export default function QueryProcessor(query: string): string {
     return ("juhyep");
   }
   else if (query.toLowerCase().includes("name")) {
-    return ("Sally");
+    return ("sally");
   }
+  else if (query.toLowerCase().includes("41 plus 51")) {
+    return ("92");
+  }
+
 
   return "";
 }
