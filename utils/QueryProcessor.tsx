@@ -20,10 +20,33 @@ export default function QueryProcessor(query: string): string {
       return (x+y).toString();
     }
   }
-  
+  //Which of the following numbers is the largest: 35, 29, 80?	
   else if (query.toLowerCase().includes("largest")) {
-    return ("78");
+    const largestNum = query.match(/Which of the folling numbers is the largest: (\d+), (\d+), (\d+)/);
+    if (largestNum) {
+      const x: number = parseInt(largestNum[1]);
+      const y: number = parseInt(largestNum[2]);
+      const z: number = parseInt(largestNum[3]);
+      return (x+y).toString();
+    }
   }
+  else if (query.toLowerCase().includes("minus")) {
+    const addMatch = query.match(/What is (\d+) minus (\d+)/);
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      return (x-y).toString();
+    }
+  }
+  else if (query.toLowerCase().includes("multiplied")) {
+    const addMatch = query.match(/What is (\d+) minus (\d+)/);
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      return (x*y).toString();
+    }
+  }
+
 
   return "";
 }
